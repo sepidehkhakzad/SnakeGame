@@ -1,80 +1,73 @@
-# <div align="center"> Pneumonia Detection <br/> <br/> <img src="./Figures/Pnumonia_icon.jpeg" width="150"> </div>
 
-# Chest X-Ray Image Classification
+<div align="center"> Pneumonia Detection <br/> <br/> <img src="SnakeGame_icon.jpeg" width="150"> </div>
 
-This repository contains code for a
-chest X-ray image classification project. The goal is to classify X-ray images into two classes: \"NORMAL\" and \"PNEUMONIA\". The project involves **data** **preprocessing**, **unsupervised** **learning** using **KMeans** and **GMM**, and **supervised learning** using Convolutional Neural Networks (**CNNs**).
+# Snake Game in Python
 
-Below are the steps to set up the project and run the code.
+## Overview
 
-### Library Installation 
+This is a simple implementation of the classic Snake Game using Python and Object-Oriented Programming (OOP) principles. The game is played in the console, and the snake grows longer as it consumes food, while the player aims to achieve the highest score without colliding with the game boundaries or the snake's own body.
 
-Make sure to install the required libraries by
-running the following commands:
+## Features
+- Object-oriented design for better code structure and readability.
+- Simple console-based user interface.
+- Snake grows in length upon consuming food.
+- Score tracking to keep track of the player's progress.
 
- ```{python}
+## Requirements
+Python 3.x
 
-pip install torch torchvision opencv-contrib-python
-pip install scikit-learn kaggle 
+## How to Play
+1. Clone the repository:
+
+```
+git clone https://github.com/sepidehkhakzad/SnakeGame.git
 ```
 
-### Downloading the Data 
+2. Navigate to the project directory:
 
-Before running the code, download the chest X-ray dataset from Kaggle. Ensure you have a Kaggle account and have obtained the API key. Move the kaggle.json file to the required directory:
-
- ```{python}
-mkdir -p \~/.kaggle cp ./kaggle.json \~/.kaggle/ chmod 600
-\~/.kaggle/kaggle.json 
+```
+cd SnakeGame
 ```
 
-Download and unzip the dataset:
+3. Run the game:
+
 ```
-kaggle datasets download -d paultimothymooney/chest-xray-pneumonia 
-unzip chest-xray-pneumonia.zip 
- ```
+python main.py
+```
 
- Here are two samples of the Pnemonia and normal images:
-<p align="center">
-  <img src="./Figures/normal.png" width="400" height="300" alt="normal">
-  <img src="./Figures/pneumonia.png" width="400" height="300" alt="pneumonia">
-</p>
+4. Use the arrow keys to control the snake's direction:
 
-### Data Preprocessing 
-The code includes data loading, **histogram equalization** resizing, and normalization. The dataset is split into training, testing, and validation sets.
+- Up arrow: Move the snake up
+- Down arrow: Move the snake down
+- Left arrow: Move the snake left
+- Right arrow: Move the snake right
 
+5. Try to eat the food (denoted by F on the screen) to increase your score and the snake's length.
 
-### Visualization 
-Explore the dataset through visualization, including
-randomly selected X-ray images and checking for class imbalance.
-Here are the train and test class imbalance visualization:
+6. The game ends if the snake collides with the screen boundaries or its own body.
+
+Here's a demo of the game:
 
 <p align="center">
-  <img src="./Figures/trainimb.png" width="400" height="300" alt="trainimb">
-  <img src="./Figures/testimb.png" width="400" height="300" alt="testimb">
+  <img src="SnakeGameDemo2.mov" width="400" height="300" alt="normal">
 </p>
 
-### Data Augmentation 
-To address class imbalance, data augmentation techniques are applied, including random resizing, flipping, Gaussian blur, and affine transformations.
+## File Structure
+- main.py: Main Python script containing the game logic and implementation.
+- snake.py: Snake object class to keep track of the length and movement of the snake.
+- food.py: Food object class to keep track of the position of the food and change it after every collision.
+- scoreboard.py: Scoreboard object class to keep track of the score and force the gameover sequence.
+- README.md: Documentation file providing information about the project.
 
-### Unsupervised Learning
-Apply unsupervised learning techniques such as KMeans and Gaussian Mixture Models (GMM) for feature extraction and clustering. Principle Component Analysis (PCA) is used to reduce the overhead for both methods.
+## Acknowledgments
+This project was inspired by the classic Snake Game.
+Special thanks to the Python community for providing valuable resources and support.
 
-<p align="center">
-  <img src="./Figures/pca.png" width="400" height="300" alt="PCA">
-</p>
+## Contribution
+Contributions are welcome! Feel free to submit issues or pull requests to improve the game.
 
-### Supervised Learning
+## License
+This Snake Game project is licensed under the Apache License.
 
-Train a Convolutional Neural Network (CNN) for image classification. Two architectures are implemented: a custom CNN and a fine-tuned MobileNetV3.
+Enjoy the game! 🐍🎮
 
-### Model Evaluation 
-
-Evaluate the models using metrics such as accuracy, precision, recall, and F1-score. Confusion matrices and ROC curves are also plotted for further analysis.
-
-<p align="center">
-  <img src="./Figures/confmat.png" width="400" height="300" alt="confmat">
-  <img src="./Figures/Roc.png" width="400" height="300" alt="ROC">
-</p>
-
-### Comparison 
-We compared the performance of unsupervised learning (KMeans and GMM) with supervised learning (CNN) and discussed their strengths and weaknesses.
