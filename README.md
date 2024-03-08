@@ -1,5 +1,5 @@
 
-<div align="center"> Pneumonia Detection <br/> <br/> <img src="SnakeGame_icon.jpeg" width="150"> </div>
+<div align="center"> Snake Game <br/> <br/> <img src="SnakeGame_icon.jpeg" width="150"> </div>
 
 # Snake Game in Python
 
@@ -49,7 +49,7 @@ python main.py
 Here's a demo of the game:
 
 <p align="center">
-  <img src="SnakeGameDemo2.mov" width="400" height="300" alt="normal">
+  <img src="SnakeGameDemo2.gif" width="400" height="300" alt="normal">
 </p>
 
 ## File Structure
