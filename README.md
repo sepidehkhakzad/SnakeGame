@@ -49,7 +49,7 @@ python main.py
 Here's a demo of the game:
 
 <p align="center">
-  <img src="SnakeGameDemo2.gif" width="400" height="300" alt="normal">
+  <img src="SnakeGameDemo2.gif" width="300" height="300" alt="normal">
 </p>
 
 ## File Structure
